@@ -26,6 +26,8 @@ def get_data():
     df = pd.read_sql_table(table_name, engine)
 
     # Convert the DataFrame to a dictionary and then to JSON
+
+    
     data = df.to_dict(orient='records')
 
     # Return the data as JSON
