@@ -1,0 +1,10 @@
+data/customers.csv
+jenkinsDetails.txt
+readApi.py
+data/data.json
+.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.DS_Store

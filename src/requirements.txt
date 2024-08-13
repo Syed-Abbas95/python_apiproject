@@ -1,5 +1,0 @@
-flask
-sqlalchemy
-pandas
-python-dotenv
-psycopg2

@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url: 'https://github.com/Syed-Abbas95/python_apiproject', branch: 'main' 
+                git url: 'https://github.com/Syed-Abbas95/python_apiproject.git', branch: 'main' 
             }
         }
         stage('Build Docker Image') {
