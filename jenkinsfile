@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    sh 'docker build -t flask-api-image .'
+                    sh 'docker build -t flask-api-image-syed .'
                 }
             }
         }
@@ -28,18 +28,18 @@ pipeline {
                 script {
                     // Stop any existing container
                     sh '''
-                        docker stop flask-api-container || true
-                        docker rm flask-api-container || true
+                        docker stop flask-api-container-syed || true
+                        docker rm flask-api-container-syed || true
                     '''
                     // Run the Docker container
                     sh '''
-                        docker run -d --name flask-api-container \
+                        docker run -d --name flask-api-container-syed \
                         -e ENDPOINT=${DB_ENDPOINT} \
                         -e USER=${DB_USER} \
                         -e PASSWORD=${DB_PASSWORD} \
                         -e PORT=${DB_PORT} \
                         -e DATABASE=${DB_NAME} \
-                        -p ${FLASK_APP_PORT}:${FLASK_APP_PORT} flask-api-image
+                        -p ${FLASK_APP_PORT}:${FLASK_APP_PORT} flask-api-image-syed
                     '''
                 }
             }
@@ -57,9 +57,9 @@ pipeline {
             script {
                 echo 'Build failed. Cleaning up Docker resources.'
                 sh '''
-                    docker stop flask-api-container || true
-                    docker rm flask-api-container || true
-                    docker rmi flask-api-image || true
+                    docker stop flask-api-container-syed || true
+                    docker rm flask-api-container-syed || true
+                    docker rmi flask-api-image-syed || true
                 '''
             }
         }

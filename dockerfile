@@ -20,3 +20,4 @@ EXPOSE 5200
 
 # Run the Flask app
 CMD ["flask", "run"]
+
